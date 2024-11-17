@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Juego de Adivinanza</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .game-container {
+        margin-top: 50px;
+        text-align: center;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container game-container">
+      <h1>Adivina el Número</h1>
+      <p>He elegido un número entre 1 y 100. ¡Intenta adivinarlo!</p>
+      <input
+        type="number"
+        id="guess"
+        class="form-control"
+        placeholder="Escribe tu número aquí"
+      />
+      <button id="submit" class="btn btn-primary mt-3">Adivinar</button>
+      <div id="message" class="result"></div>
+    </div>
+
+    <script>
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("submit").addEventListener("click", function () {
+        let userGuess = parseInt(document.getElementById("guess").value);
+        if (userGuess === randomNumber) {
+          document.getElementById("message").innerHTML =
+            "¡Correcto! El número era " + randomNumber + ".";
+        } else if (userGuess < randomNumber) {
+          document.getElementById("message").innerHTML =
+            "Demasiado bajo. Intenta de nuevo.";
+        } else {
+          document.getElementById("message").innerHTML =
+            "Demasiado alto. Intenta de nuevo.";
+        }
+      });
+    </script>
+  </body>
+</html>
