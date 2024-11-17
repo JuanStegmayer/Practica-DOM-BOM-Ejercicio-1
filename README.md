@@ -13,4 +13,5 @@ Victoria: Si el usuario adivina el número, se le mostrará un mensaje indicando
 Tecnologías:
 
 Bootstrap: Para el diseño y la estructura de la página web.
+
 JavaScript: Para la lógica del juego, la generación de números aleatorios y la interacción con el usuario.
